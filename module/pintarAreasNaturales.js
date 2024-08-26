@@ -21,6 +21,9 @@ export function pintarAreasNaturales(id, search = '') {
                 });
             }
 
+            // Crear un conjunto para almacenar los nombres de áreas naturales ya agregadas
+            const nombresUnicos = new Set();
+
             // Obtener el nombre del departamento haciendo una solicitud a la API de departamentos
             const urlDepartamento = `${url}/Department/${id}`;
             fetch(urlDepartamento)
@@ -36,18 +39,20 @@ export function pintarAreasNaturales(id, search = '') {
 
                     // Verificar si se encontraron áreas naturales
                     if (areasFiltradas.length > 0) {
-                        // Recorrer las áreas naturales filtradas y agregar las tarjetas
+                        // Recorrer las áreas naturales filtradas y agregar las tarjetas si el nombre no se ha agregado antes
                         areasFiltradas.forEach((area) => {
-                            const card = document.createElement("div");
-                            card.classList.add("card");
-                            card.innerHTML = `
-                                <div class="card-body">
-                                    <img src="../media/colombia3.jpg" class="card-img-top" alt="${area.name}">
-                                    <h5 class="card-title">${area.name}</h5>
-                                    <p>${area.id}</p>
-                                </div>
-                            `;
-                            div.appendChild(card);
+                            if (!nombresUnicos.has(area.name)) {
+                                nombresUnicos.add(area.name);
+                                const card = document.createElement("div");
+                                card.classList.add("card");
+                                card.innerHTML = `
+                                    <div class="card-body">
+                                        <img src="../media/colombia3.jpg" class="card-img-top" alt="${area.name}">
+                                        <h5 class="card-title">${area.name}</h5>
+                                    </div>
+                                `;
+                                div.appendChild(card);
+                            }
                         });
                         section.appendChild(div);
                     } else {
