@@ -13,9 +13,6 @@ export function pintarDepartamentos(id, search ) {
                     return (
                         departamento.name
                             .toLowerCase()
-                            .includes(search.toLowerCase()) ||
-                        departamento.description
-                            .toLowerCase()
                             .includes(search.toLowerCase())
                     );
                 });

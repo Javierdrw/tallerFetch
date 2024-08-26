@@ -44,6 +44,7 @@ export function pintarAreasNaturales(id, search = '') {
                                 <div class="card-body">
                                     <img src="../media/colombia3.jpg" class="card-img-top" alt="${area.name}">
                                     <h5 class="card-title">${area.name}</h5>
+                                    <p>${area.id}</p>
                                 </div>
                             `;
                             div.appendChild(card);

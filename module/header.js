@@ -23,10 +23,10 @@ export function pintarHeader(headerId) {
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="${tituloPagina == 'Departamentos'? '#' : tituloPagina == 'Especies Invasoras' || 'Detalles'? './departamentos.html' : './pages/departamentos.html'}">Departamento</a>
+                <a class="nav-link ${tituloPagina == 'Departamentos' ? 'active' : ''}" aria-current="page" href="${tituloPagina == 'Departamentos'? '#' : tituloPagina == 'Especies Invasoras' || tituloPagina == 'Detalles'? './departamentos.html' : './pages/departamentos.html'}">Departamentos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="${tituloPagina == 'Especies Invasoras'? '#' : tituloPagina == 'Departamentos' || 'Detalles'? './Especies.html' : './pages/departamentos.html'}">Especies Invasoras</a>
+                <a class="nav-link ${tituloPagina == 'Especies Invasoras' ? 'active' : ''}" href="${tituloPagina == 'Especies Invasoras'? '#' : tituloPagina == 'Departamentos' || tituloPagina == 'Detalles'? './Especies.html' : './pages/especies.html'}">Especies Invasoras</a>
               </li>
             </ul>
           </div>
