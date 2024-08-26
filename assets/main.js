@@ -5,7 +5,10 @@
 
 import { pintarHeader } from "../module/header.js";
 import { pintarMainHome } from "../module/mainHome.js";
+import { renderizarFooter } from "../module/footer.js";
 
 pintarHeader("homeHeader");
 // pintarDepartamentos('homeMain');
 pintarMainHome();
+
+renderizarFooter("homeFooter");

@@ -2,6 +2,7 @@ import { pintarHeader } from "../module/header.js";
 import { url } from "../module/data.js";
 import { pintarMunicipios } from "../module/pintarMunicipios.js";
 import { pintarAreasNaturales } from "../module/pintarAreasNaturales.js";
+import { renderizarFooter } from "../module/footer.js";
 
 pintarHeader("detailsHeader");
 
@@ -145,3 +146,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+renderizarFooter("detailsFooter");
